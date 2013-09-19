@@ -3,7 +3,7 @@ var test = require('tap').test,
 
 test('valid response', function(t) {
   var client = wolfram.createClient(process.env.WOLFRAM_APPID)
-  
+
   t.test("integrate 2x", function(t) {
     client.query("integrate 2x", function(err, result) {
       t.notOk(err, "err should be null")
@@ -24,7 +24,7 @@ test('valid response', function(t) {
       t.ok(result.length)
       t.equal(result.length, 6)
       t.equal(result[1].primary, true)
-      t.equal(result[1].subpods[0].value, '2')
+      t.equal(result[1].subpods[1].value, '2')
       t.end()
     })
   })
